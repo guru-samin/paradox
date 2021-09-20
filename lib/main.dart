@@ -1,8 +1,11 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:paradox/card1.dart';
+import 'package:paradox/card2.dart';
+import 'package:paradox/footer.dart';
 import 'package:paradox/widgets/app_bar.dart';
 import 'package:paradox/widgets/banner_image.dart';
-import 'package:paradox/widgets/frosted_container.dart';
+import 'package:paradox/frosted_container.dart';
 import 'package:paradox/widgets/grid_images.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
@@ -31,11 +34,7 @@ class _HomePageState extends State<HomePage> {
       initialVideoId: YoutubePlayer.convertUrlToId(
           'https://www.youtube.com/watch?v=dpEPNioJ1Ik')!,
       flags: YoutubePlayerFlags(
-        autoPlay: true,
-        enableCaption: false,
-        isLive: false,
-        loop: true
-      ),
+          autoPlay: true, enableCaption: false, isLive: false, loop: true),
     );
   }
 
@@ -50,27 +49,19 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar:
           PreferredSize(preferredSize: Size.fromHeight(30), child: MyAppBar()),
-      body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(4.0),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(5),
-                child: Container(
-                  height: MediaQuery.of(context).size.height * 0.25,
-                  color: Colors.blue,
-                  child: YoutubePlayer(
-                    controller: _controller,
-                  ),
-                ),
-              ),
-            ),
-            BannerImage(),
-            GridImages(),
-            ContainerWithFrostedGlassEffect(),
-          ],
+      body: SingleChildScrollView(
+        child: Container(
+          height: MediaQuery.of(context).size.height * 3,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Expanded(child: Container(color: Colors.white)),
+              ContainerWithFrostedGlassEffect(),
+              Card2(),
+              Card1(),
+              Footer(),
+            ],
+          ),
         ),
       ),
     );

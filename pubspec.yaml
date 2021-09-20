@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   youtube_player_flutter: ^8.0.0
+  font_awesome_flutter: ^9.1.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -52,6 +53,14 @@ flutter:
     - assets/nature.jpg
     - assets/original.jpg
     - assets/work culture.png
+    - assets/Path 25.png
+    - assets/download.png
+    - assets/macos.png
+    - assets/right arrow.png
+    - assets/Ellipse 13.png
+    - assets/Path 27.png
+    - assets/Path 26.png
+    - assets/16275.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
